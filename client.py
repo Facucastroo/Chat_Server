@@ -112,17 +112,13 @@ class Chat(tk.Tk):
         while True:
             try:
                 message = self.client.recv(1024).decode(FORMAT)
-
                 if message == 'NAME':
                     self.client.send(self.name.encode(FORMAT))
-
                 else:
                     self.text.config(state=tk.NORMAL)
                     self.text.insert(tk.END, message+"\n\n")
-
                     self.text.config(state=tk.DISABLED)
-                    self.text.see(tk.END)
-                    
+                    self.text.see(tk.END)   
             except:
                 print("An error occurred!")
                 self.client.close()
