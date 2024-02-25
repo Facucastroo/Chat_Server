@@ -148,7 +148,6 @@ class Enter_server(tk.Frame):
                 host=str(ipaddress.ip_address(HOST))
                 client.Chat(host,int(PORT))
             except Exception as e:
-                print
                 messagebox.showerror("showerror", f"Error{e}")
        
 root = APP()

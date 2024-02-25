@@ -43,11 +43,11 @@ def Server(HOST,PORT):
             conn.send('Connection successful!'.encode(FORMAT))
             # Start a new thread to handle the client's communication
             threading.Thread(target=handle, args=(conn, addr), daemon=True).start()
+        server.close()
             
 def startChat(HOST,PORT):
     # Start a new thread to run the server
     threading.Thread(target=Server, args=(HOST,PORT)).start()
-    print(f"active connections {threading.activeCount()-1}")
 
 def handle(connection, address):
     # Print the address of the client that just connected
@@ -70,6 +70,7 @@ def handle(connection, address):
         except Exception as e:
             print(f'Error to handle user connection: {e}')
             remove_connection(connection)
+            connection.close()
             break
     # Close the connection with the client
     connection.close()
