@@ -1,7 +1,10 @@
 <header>
 
   # Chat_Server
+
   _Chat server, with Python socket_
+
+  Video Demo: _https://youtu.be/sItpoR9V_YM_
 </header>
 
 ### This code is an implementation of a basic multi-threaded chat using Python's built-in `socket module` and `tkinter` for the GUI. 
@@ -30,7 +33,6 @@ _The server is designed to accept multiple client connections, broadcast message
 8. **Broadcasting messages:** The `broadcast function` sends a message to all connected clients. go through the list of connections with a for loop and send a message
       
 9. **Removing connections:** The `remove_connection` function removes a client's connection from the list of active connections. go through the list of connections with a for loop and remove connection and close socket
-
 
 ### CLIENT.PY
 _simple chat client using the Tkinter for the graphical user interface (GUI) and the socket library for creating a connection to a server. The chat client allows a user to log in with their name, send messages to other connected users, and view messages from the server in a scrollable text box._
